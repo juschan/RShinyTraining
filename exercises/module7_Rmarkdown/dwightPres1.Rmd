@@ -1,0 +1,42 @@
+---
+title: "dwightPres"
+author: "Dwight Fonseka"
+date: "April 26, 2017"
+output: ioslides_presentation
+runtime: shiny
+---
+
+***
+```{r stimulatedata, echo=FALSE}
+x=rnorm(100); y=x + rnorm(100, sd=0.5)
+```
+Here is a scatterplot
+```{r scatterplot, fig.height=4, echo=FALSE}   
+# adjusting figure height or fig.width
+par(mar=c(5,4,1,1), las=1)
+plot(x,y, main="My Stimulated Data")
+```
+
+
+***
+```{r, echo = FALSE}
+numericInput("rows", "How many cars?", 5)
+
+renderTable({
+  head(cars, input$rows)
+})
+```
+
+
+***
+```{r, echo = FALSE}
+sliderInput("bins", "Number of bins:", min = 1, max = 50, value = 30)
+
+renderPlot({
+  x <- faithful[, 2]  # Old Faithful Geyser data
+  bins <- seq(min(x), max(x), length.out = input$bins + 1)
+
+  # draw the histogram with the specified number of bins
+  hist(x, breaks = bins, col = 'darkgray', border = 'white')
+})
+```

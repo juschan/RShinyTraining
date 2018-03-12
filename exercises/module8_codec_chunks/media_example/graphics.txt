@@ -1,0 +1,6 @@
+big="C://Users//user//Documents//R//win-library//3.3//bigData"
+aws="C://Users//user//Documents//R//win-library//3.3//awsCloud"
+bio="C://Users//user//Documents//R//win-library//3.3//bioconductor"
+sci="C://Users//user//Documents//R//win-library//3.3//dataSCI"
+deep="C://Users//user//Documents//R//win-library//3.3//deepLearning"
+fin="C://Users//user//Documents//R//win-library//3.3//finance"

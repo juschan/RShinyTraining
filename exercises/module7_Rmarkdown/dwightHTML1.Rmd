@@ -1,0 +1,55 @@
+---
+title: "shinytest"
+author: "Dwight Fonseka"
+date: "April 25, 2017"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo = FALSE}
+
+shinyApp(
+
+ui=fluidPage(
+    titlePanel("mtcars data"),
+             sidebarLayout(
+               sidebarPanel(
+           textInput("title", "Plot title:", value = "x v y"),
+     
+                selectInput("x", "Choose an x var:",
+                             choices = names(mtcars),
+                             selected = "disp"),
+                selectInput("y", "Choose a y Var:",
+                             choices = names(mtcars),
+                             selected = "mpg")
+                  ),
+    
+                  mainPanel(
+                         h3(textOutput("text")),
+                          plotOutput("plot")
+                        )
+                     )
+),
+ 
+server=function(input, output) {
+            output$text=renderText({
+            input$title
+            })
+
+             output$plot=renderPlot({
+             x=mtcars[, input$x]
+             y=mtcars[, input$y]
+             plot(x,y, pch=16, col = "red")
+             })
+},
+
+ options = list(height = 500)
+)
+
+
+```
+
