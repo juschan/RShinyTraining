@@ -6,4 +6,4 @@
 - [shinyapps.io - for hosting your shiny apps](https://www.shinyapps.io/)
 
 ### Useful Resources
-= [ZevRoss - R Shiny with 40 examples](http://zevross.com/blog/2016/04/19/r-powered-web-applications-with-shiny-a-tutorial-and-cheat-sheet-with-40-example-apps/)
+- [ZevRoss - R Shiny with 40 examples](http://zevross.com/blog/2016/04/19/r-powered-web-applications-with-shiny-a-tutorial-and-cheat-sheet-with-40-example-apps/)
